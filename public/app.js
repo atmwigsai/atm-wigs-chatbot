@@ -1,6 +1,9 @@
 // ===== CONFIG =====
 //const API_BASE_URL = window.location.origin; // Tự động lấy URL hiện tại
-const API_BASE_URL = 'http://127.0.0.1:5000'; // URL backend Flask
+// Tự động phát hiện môi trường
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:5000'  // Local development
+    : window.location.origin;  // Production (Vercel)
 // ===== STATE =====
 let currentSessionId = null;
 let uploadedImageUrl = null;
