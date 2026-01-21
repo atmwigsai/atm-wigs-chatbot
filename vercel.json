@@ -2,34 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/main.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/api/sessions",
-      "dest": "api/main.py",
-      "methods": ["GET", "POST"]
-    },
-    {
-      "src": "/api/sessions/(.*)",
-      "dest": "api/main.py",
-      "methods": ["GET", "PATCH"]
-    },
-    {
-      "src": "/api/chat",
-      "dest": "api/main.py",
-      "methods": ["POST"]
-    },
-    {
-      "src": "/api/upload",
-      "dest": "api/main.py",
-      "methods": ["POST"]
-    },
-    {
       "src": "/api/(.*)",
-      "dest": "api/main.py"
+      "dest": "api/index.py"
     },
     {
       "src": "/(.*)",
