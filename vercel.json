@@ -2,38 +2,38 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/chat.py",
+      "src": "api/main.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "api/history.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/chat",
-      "dest": "/api/chat.py"
+      "src": "/api/sessions",
+      "dest": "api/main.py",
+      "methods": ["GET", "POST"]
     },
     {
       "src": "/api/sessions/(.*)",
-      "dest": "/api/history.py"
+      "dest": "api/main.py",
+      "methods": ["GET", "PATCH"]
     },
     {
-      "src": "/api/sessions",
-      "dest": "/api/history.py"
+      "src": "/api/chat",
+      "dest": "api/main.py",
+      "methods": ["POST"]
     },
     {
       "src": "/api/upload",
-      "dest": "/api/history.py"
+      "dest": "api/main.py",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "api/main.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "public/$1"
     }
   ]
 }
