@@ -4,8 +4,11 @@ import requests
 import os
 from supabase import create_client, Client
 from datetime import datetime
+from dotenv import load_dotenv
 import uuid
 
+# Load environment variables
+load_dotenv()
 # Load env
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
