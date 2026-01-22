@@ -6,10 +6,10 @@
 }
 
 :root {
-    --brand-color: #A0692D;
+    --brand-color: #A2661D;
     --sidebar-bg: #000000;
     --conversation-bg: #1a1a19;
-    --user-message-bg: #A0692D;
+    --user-message-bg: #A2661D;
     --text-white: #ffffff;
     --text-gray: #e0e0e0;
     --hover-bg: rgba(255, 255, 255, 0.1);
